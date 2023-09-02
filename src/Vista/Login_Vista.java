@@ -4,6 +4,8 @@
  */
 package Vista;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author User
@@ -70,11 +72,22 @@ public class Login_Vista extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 210, 35));
+
+        txt_contraseña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_contraseñaActionPerformed(evt);
+            }
+        });
         jPanel1.add(txt_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 210, 35));
 
         btn_enter.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btn_enter.setText("INGRESAR");
         btn_enter.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_enter.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_enterMouseClicked(evt);
+            }
+        });
         jPanel1.add(btn_enter, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 210, 35));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 490, 420));
@@ -92,6 +105,30 @@ public class Login_Vista extends javax.swing.JFrame {
     private void txt_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_usernameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_usernameActionPerformed
+
+    private void btn_enterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_enterMouseClicked
+        String Usuario = "Admin" ;
+        String Contraseña = "estructurasdedatos2023"; 
+        
+        String Pass = new String (txt_contraseña.getPassword());
+        
+        if(txt_username.getText().equals(Usuario)&& Pass.equals(Contraseña)){
+            
+            System_Vista SV = new System_Vista();
+            SV.setVisible(true);
+            dispose();
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Usuario o Contraseña incorrecta");
+        }
+       
+        
+    }//GEN-LAST:event_btn_enterMouseClicked
+
+    private void txt_contraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_contraseñaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_contraseñaActionPerformed
 
     /**
      * @param args the command line arguments

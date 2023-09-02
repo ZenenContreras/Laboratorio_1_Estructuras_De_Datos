@@ -52,7 +52,7 @@ public class System_Vista extends javax.swing.JFrame {
         btnSalir = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanelEmpleadosPane = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
+        jPanelEmpleadosRegistrar = new javax.swing.JPanel();
         jLabelEmpleadosNombre = new javax.swing.JLabel();
         jLabelEmpleadosCedula = new javax.swing.JLabel();
         jLabelEmpleadosCargo = new javax.swing.JLabel();
@@ -75,6 +75,24 @@ public class System_Vista extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         Empleados_table = new javax.swing.JTable();
         jPanelVentasPane = new javax.swing.JPanel();
+        jPanelEmpleadosRegistrar1 = new javax.swing.JPanel();
+        jLabelVentasNombre = new javax.swing.JLabel();
+        jLabelVentasCedula = new javax.swing.JLabel();
+        jLabelVentasTipoDeAuto = new javax.swing.JLabel();
+        jTextFieldVentasNombre = new javax.swing.JTextField();
+        jTextFieldVentasCedula = new javax.swing.JTextField();
+        jLabelVentasCodigoDelAuto = new javax.swing.JLabel();
+        jTextFieldVentasCodigoDelAuto = new javax.swing.JTextField();
+        jLabelVentasMontoDeLaVenta = new javax.swing.JLabel();
+        jTextFieldVentasMontoDeLaVenta = new javax.swing.JTextField();
+        btnVentasRegistrar = new javax.swing.JButton();
+        btnVentasEliminar = new javax.swing.JButton();
+        btnVentasCancelar = new javax.swing.JButton();
+        jComboBoxVentasTipoDeAuto = new javax.swing.JComboBox<>();
+        jLabelVentasBuscar = new javax.swing.JLabel();
+        jTextFieldVentasBuscar = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Ventas_table = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -130,90 +148,95 @@ public class System_Vista extends javax.swing.JFrame {
 
         btnSalir.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnSalir.setText("Salir");
+        btnSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSalirMouseClicked(evt);
+            }
+        });
         jPanel3.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, -1, -1));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 730, 100));
 
-        jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
+        jTabbedPane1.setBackground(new java.awt.Color(40, 147, 153));
 
         jPanelEmpleadosPane.setBackground(new java.awt.Color(40, 147, 153));
         jPanelEmpleadosPane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Empleados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelEmpleadosRegistrar.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Empleados", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+        jPanelEmpleadosRegistrar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelEmpleadosNombre.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelEmpleadosNombre.setText("Nombre :");
-        jPanel4.add(jLabelEmpleadosNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+        jPanelEmpleadosRegistrar.add(jLabelEmpleadosNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
         jLabelEmpleadosCedula.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelEmpleadosCedula.setText("Cédula : ");
-        jPanel4.add(jLabelEmpleadosCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+        jPanelEmpleadosRegistrar.add(jLabelEmpleadosCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
 
         jLabelEmpleadosCargo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelEmpleadosCargo.setText("Cargo: ");
-        jPanel4.add(jLabelEmpleadosCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+        jPanelEmpleadosRegistrar.add(jLabelEmpleadosCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
         jTextFieldEmpleadosNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldEmpleadosNombreActionPerformed(evt);
             }
         });
-        jPanel4.add(jTextFieldEmpleadosNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 100, -1));
-        jPanel4.add(jTextFieldEmpleadosCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 100, -1));
-        jPanel4.add(jTextFieldEmpleadosCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 100, -1));
+        jPanelEmpleadosRegistrar.add(jTextFieldEmpleadosNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 100, -1));
+        jPanelEmpleadosRegistrar.add(jTextFieldEmpleadosCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 100, -1));
+        jPanelEmpleadosRegistrar.add(jTextFieldEmpleadosCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 100, -1));
 
         jLabelEmpleadosTelefono.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelEmpleadosTelefono.setText("Teléfono :");
-        jPanel4.add(jLabelEmpleadosTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, -1, -1));
+        jPanelEmpleadosRegistrar.add(jLabelEmpleadosTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, -1, -1));
 
         jTextFieldEmpleadosTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldEmpleadosTelefonoActionPerformed(evt);
             }
         });
-        jPanel4.add(jTextFieldEmpleadosTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 100, -1));
+        jPanelEmpleadosRegistrar.add(jTextFieldEmpleadosTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 30, 100, -1));
 
         jLabelEmpleadosFechaIngreso.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelEmpleadosFechaIngreso.setText("Fecha Ingreso:");
-        jPanel4.add(jLabelEmpleadosFechaIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, -1));
-        jPanel4.add(jTextFieldEmpleadosFechaIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, 100, -1));
+        jPanelEmpleadosRegistrar.add(jLabelEmpleadosFechaIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, -1, -1));
+        jPanelEmpleadosRegistrar.add(jTextFieldEmpleadosFechaIngreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, 100, -1));
 
         jLabelEmpleadosSalarioFijo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelEmpleadosSalarioFijo.setText("Salario fijo : ");
-        jPanel4.add(jLabelEmpleadosSalarioFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, -1, -1));
+        jPanelEmpleadosRegistrar.add(jLabelEmpleadosSalarioFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, -1, -1));
 
         jTextFieldEmpleadosSalarioFijo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldEmpleadosSalarioFijoActionPerformed(evt);
             }
         });
-        jPanel4.add(jTextFieldEmpleadosSalarioFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 100, -1));
+        jPanelEmpleadosRegistrar.add(jTextFieldEmpleadosSalarioFijo, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 100, -1));
 
         btnEmpleadosRegistrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnEmpleadosRegistrar.setText("Registrar");
-        jPanel4.add(btnEmpleadosRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, -1, -1));
+        jPanelEmpleadosRegistrar.add(btnEmpleadosRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, -1, -1));
 
         btnEmpleadosEliminar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnEmpleadosEliminar.setText("Eliminar");
-        jPanel4.add(btnEmpleadosEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, -1, -1));
+        jPanelEmpleadosRegistrar.add(btnEmpleadosEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, -1, -1));
 
         btnEmpleadosCancelar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnEmpleadosCancelar.setText("Cancelar");
-        jPanel4.add(btnEmpleadosCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, -1, -1));
+        jPanelEmpleadosRegistrar.add(btnEmpleadosCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, -1, -1));
 
         jLabelEmpleadosSalarioComisiones.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelEmpleadosSalarioComisiones.setText("Salario más comisiones :");
-        jPanel4.add(jLabelEmpleadosSalarioComisiones, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, -1, 20));
+        jPanelEmpleadosRegistrar.add(jLabelEmpleadosSalarioComisiones, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, -1, 20));
 
         jTextFieldEmpleadosSalarioComisiones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldEmpleadosSalarioComisionesActionPerformed(evt);
             }
         });
-        jPanel4.add(jTextFieldEmpleadosSalarioComisiones, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 100, -1));
+        jPanelEmpleadosRegistrar.add(jTextFieldEmpleadosSalarioComisiones, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 70, 100, -1));
 
-        jPanelEmpleadosPane.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 690, 200));
+        jPanelEmpleadosPane.add(jPanelEmpleadosRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 690, 200));
 
         jLabelEmpleadosBuscar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabelEmpleadosBuscar.setText("Buscar: ");
@@ -232,13 +255,100 @@ public class System_Vista extends javax.swing.JFrame {
             }
         ));
         jScrollPane1.setViewportView(Empleados_table);
+        if (Empleados_table.getColumnModel().getColumnCount() > 0) {
+            Empleados_table.getColumnModel().getColumn(5).setHeaderValue("Salario Fijo");
+            Empleados_table.getColumnModel().getColumn(6).setHeaderValue("Salario más comisiones");
+        }
 
         jPanelEmpleadosPane.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 690, 140));
 
         jTabbedPane1.addTab("Empleados", jPanelEmpleadosPane);
 
-        jPanelVentasPane.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelVentasPane.setBackground(new java.awt.Color(40, 147, 153));
         jPanelVentasPane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanelEmpleadosRegistrar1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Ventas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+        jPanelEmpleadosRegistrar1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabelVentasNombre.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelVentasNombre.setText("Nombre :");
+        jPanelEmpleadosRegistrar1.add(jLabelVentasNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+
+        jLabelVentasCedula.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelVentasCedula.setText("Cédula : ");
+        jPanelEmpleadosRegistrar1.add(jLabelVentasCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, 20));
+
+        jLabelVentasTipoDeAuto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelVentasTipoDeAuto.setText("Tipo De auto:");
+        jPanelEmpleadosRegistrar1.add(jLabelVentasTipoDeAuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
+
+        jTextFieldVentasNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldVentasNombreActionPerformed(evt);
+            }
+        });
+        jPanelEmpleadosRegistrar1.add(jTextFieldVentasNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 100, -1));
+
+        jTextFieldVentasCedula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldVentasCedulaActionPerformed(evt);
+            }
+        });
+        jPanelEmpleadosRegistrar1.add(jTextFieldVentasCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 100, -1));
+
+        jLabelVentasCodigoDelAuto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelVentasCodigoDelAuto.setText("Código del auto :");
+        jPanelEmpleadosRegistrar1.add(jLabelVentasCodigoDelAuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, -1, -1));
+
+        jTextFieldVentasCodigoDelAuto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldVentasCodigoDelAutoActionPerformed(evt);
+            }
+        });
+        jPanelEmpleadosRegistrar1.add(jTextFieldVentasCodigoDelAuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 50, 100, -1));
+
+        jLabelVentasMontoDeLaVenta.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelVentasMontoDeLaVenta.setText("Monto de la venta:");
+        jPanelEmpleadosRegistrar1.add(jLabelVentasMontoDeLaVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, -1, -1));
+        jPanelEmpleadosRegistrar1.add(jTextFieldVentasMontoDeLaVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 100, -1));
+
+        btnVentasRegistrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnVentasRegistrar.setText("Registrar");
+        jPanelEmpleadosRegistrar1.add(btnVentasRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 30, -1, -1));
+
+        btnVentasEliminar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnVentasEliminar.setText("Eliminar");
+        jPanelEmpleadosRegistrar1.add(btnVentasEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, 90, -1));
+
+        btnVentasCancelar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        btnVentasCancelar.setText("Cancelar");
+        jPanelEmpleadosRegistrar1.add(btnVentasCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 110, 90, -1));
+
+        jComboBoxVentasTipoDeAuto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Volkswagen", "Toyota", "Mercedes-Benz ", "Ford", "BMW", "Honda", "Hyundai", " " }));
+        jPanelEmpleadosRegistrar1.add(jComboBoxVentasTipoDeAuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 100, -1));
+
+        jPanelVentasPane.add(jPanelEmpleadosRegistrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 690, 180));
+
+        jLabelVentasBuscar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabelVentasBuscar.setText("Buscar: ");
+        jPanelVentasPane.add(jLabelVentasBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, -1, -1));
+        jPanelVentasPane.add(jTextFieldVentasBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 100, -1));
+
+        Ventas_table.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Nombre", "Cédula", "Tipo De auto", "Código del auto", "Monto de la venta"
+            }
+        ));
+        jScrollPane2.setViewportView(Ventas_table);
+
+        jPanelVentasPane.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 690, 140));
+
         jTabbedPane1.addTab("Ventas", jPanelVentasPane);
 
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 730, 450));
@@ -261,6 +371,23 @@ public class System_Vista extends javax.swing.JFrame {
     private void jTextFieldEmpleadosSalarioFijoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmpleadosSalarioFijoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldEmpleadosSalarioFijoActionPerformed
+
+    private void jTextFieldVentasNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldVentasNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldVentasNombreActionPerformed
+
+    private void jTextFieldVentasCodigoDelAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldVentasCodigoDelAutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldVentasCodigoDelAutoActionPerformed
+
+    private void jTextFieldVentasCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldVentasCedulaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldVentasCedulaActionPerformed
+
+    private void btnSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalirMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnSalirMouseClicked
 
     /**
      * @param args the command line arguments
@@ -300,10 +427,15 @@ public class System_Vista extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JTable Empleados_table;
     private javax.swing.JLabel IconoEmpresa;
+    public javax.swing.JTable Ventas_table;
     private javax.swing.JButton btnEmpleadosCancelar;
     private javax.swing.JButton btnEmpleadosEliminar;
     private javax.swing.JButton btnEmpleadosRegistrar;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnVentasCancelar;
+    private javax.swing.JButton btnVentasEliminar;
+    private javax.swing.JButton btnVentasRegistrar;
+    private javax.swing.JComboBox<String> jComboBoxVentasTipoDeAuto;
     public javax.swing.JLabel jLabelEmpleados;
     private javax.swing.JLabel jLabelEmpleadosBuscar;
     private javax.swing.JLabel jLabelEmpleadosCargo;
@@ -317,15 +449,23 @@ public class System_Vista extends javax.swing.JFrame {
     public javax.swing.JLabel jLabelIconoEmpleados;
     public javax.swing.JLabel jLabelIconoVentas;
     public javax.swing.JLabel jLabelVentas;
+    private javax.swing.JLabel jLabelVentasBuscar;
+    private javax.swing.JLabel jLabelVentasCedula;
+    private javax.swing.JLabel jLabelVentasCodigoDelAuto;
+    private javax.swing.JLabel jLabelVentasMontoDeLaVenta;
+    private javax.swing.JLabel jLabelVentasNombre;
+    private javax.swing.JLabel jLabelVentasTipoDeAuto;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     public javax.swing.JPanel jPanelEmpleados;
     private javax.swing.JPanel jPanelEmpleadosPane;
+    private javax.swing.JPanel jPanelEmpleadosRegistrar;
+    private javax.swing.JPanel jPanelEmpleadosRegistrar1;
     public javax.swing.JPanel jPanelVentas;
     private javax.swing.JPanel jPanelVentasPane;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     public javax.swing.JTextField jTextFieldEmpleadosBuscar;
     public javax.swing.JTextField jTextFieldEmpleadosCargo;
@@ -335,5 +475,10 @@ public class System_Vista extends javax.swing.JFrame {
     public javax.swing.JTextField jTextFieldEmpleadosSalarioComisiones;
     public javax.swing.JTextField jTextFieldEmpleadosSalarioFijo;
     public javax.swing.JTextField jTextFieldEmpleadosTelefono;
+    public javax.swing.JTextField jTextFieldVentasBuscar;
+    public javax.swing.JTextField jTextFieldVentasCedula;
+    public javax.swing.JTextField jTextFieldVentasCodigoDelAuto;
+    public javax.swing.JTextField jTextFieldVentasMontoDeLaVenta;
+    public javax.swing.JTextField jTextFieldVentasNombre;
     // End of variables declaration//GEN-END:variables
 }
