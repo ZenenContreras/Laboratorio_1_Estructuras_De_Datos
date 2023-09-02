@@ -48,21 +48,22 @@ public class Login_Vista extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(40, 147, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("INICIAR SESIÓN");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, -1, 60));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("USUARIO:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("CONTRASEÑA:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, -1, -1));
 
+        txt_username.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txt_username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_usernameActionPerformed(evt);
@@ -71,6 +72,7 @@ public class Login_Vista extends javax.swing.JFrame {
         jPanel1.add(txt_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 170, 210, 35));
         jPanel1.add(txt_contraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 210, 35));
 
+        btn_enter.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btn_enter.setText("INGRESAR");
         btn_enter.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(btn_enter, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 280, 210, 35));
@@ -79,7 +81,7 @@ public class Login_Vista extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/68961845-alquiler-de-coches-simbolo-para-los-negocios.jpg"))); // NOI18N
+        wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoEmpresa.jpg"))); // NOI18N
         jPanel2.add(wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 410));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 412));
