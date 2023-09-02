@@ -15,7 +15,7 @@ public class System_Vista extends javax.swing.JFrame {
      */
     public System_Vista() {
         initComponents();
-        setSize(930,415);
+        setSize(930,450);
         setResizable(false); 
         setTitle("Panel de administración");
         setLocationRelativeTo(null); 
@@ -45,6 +45,9 @@ public class System_Vista extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabelEmpresa = new javax.swing.JLabel();
         btn_Salir = new javax.swing.JButton();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanelEmpleadosPane = new javax.swing.JPanel();
+        jPanelVentasPane = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -52,21 +55,25 @@ public class System_Vista extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(18, 45, 61));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanelEmpleados.setBackground(new java.awt.Color(255, 255, 255));
         jPanelEmpleados.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Empleados");
-        jPanelEmpleados.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 10, 70, 15));
+        jLabel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanelEmpleados.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 7, 75, 23));
 
         jPanel1.add(jPanelEmpleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 200, 35));
 
+        jPanelVentas.setBackground(new java.awt.Color(255, 255, 255));
         jPanelVentas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Ventas");
-        jPanelVentas.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 10, 70, 15));
+        jLabel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanelVentas.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(63, 7, 75, 23));
 
         jPanel1.add(jPanelVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 200, 35));
 
@@ -76,7 +83,7 @@ public class System_Vista extends javax.swing.JFrame {
         btn_Ventas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/IconoVentas70x70.jpg"))); // NOI18N
         jPanel1.add(btn_Ventas, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 163, 70, 70));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 200, 320));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 200, 310));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -92,13 +99,25 @@ public class System_Vista extends javax.swing.JFrame {
         jLabelEmpresa.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabelEmpresa.setForeground(new java.awt.Color(255, 255, 255));
         jLabelEmpresa.setText("Automóviles del Caribe S. A");
-        jPanel3.add(jLabelEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 350, 40));
+        jPanel3.add(jLabelEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 350, 40));
 
         btn_Salir.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btn_Salir.setText("Salir");
         jPanel3.add(btn_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, -1, -1));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 730, 100));
+
+        jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanelEmpleadosPane.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelEmpleadosPane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jTabbedPane1.addTab("Empleados", jPanelEmpleadosPane);
+
+        jPanelVentasPane.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelVentasPane.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jTabbedPane1.addTab("Ventas", jPanelVentasPane);
+
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 730, 320));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -150,6 +169,9 @@ public class System_Vista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanelEmpleados;
+    private javax.swing.JPanel jPanelEmpleadosPane;
     private javax.swing.JPanel jPanelVentas;
+    private javax.swing.JPanel jPanelVentasPane;
+    private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
 }
