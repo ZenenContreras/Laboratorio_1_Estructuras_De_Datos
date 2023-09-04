@@ -69,7 +69,42 @@ public class System_Vista extends javax.swing.JFrame {
         }
     }
             
-    
+//    public void registrarEmpleado() {
+//    
+////        
+//        String nombreEmpleado = jTextFieldEmpleadosNombre.getText();
+//        String cedula = jTextFieldEmpleadosCedula.getText();
+//        String cargo = jTextFieldEmpleadosCargo.getText();
+//        String telefono = jTextFieldEmpleadosTelefono.getText();
+//        String fecha = jTextFieldEmpleadosFechaIngreso.getText();
+//        String salarioFijo = jTextFieldEmpleadosSalarioFijo.getText();
+//        String salarioComisiones = jTextFieldEmpleadosSalarioComisiones.getText();
+//        
+////      
+//        if (nombreEmpleado.isEmpty() || cedula.isEmpty() || cargo.isEmpty() || telefono.isEmpty() || fecha.isEmpty() || salarioFijo.isEmpty()|| salarioComisiones.isEmpty()) {
+//            JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios.", "Error", JOptionPane.ERROR_MESSAGE);
+//            return;
+//        }
+//
+//        if (Double.parseDouble(salarioFijo) < 0) {
+//            JOptionPane.showMessageDialog(this, "El salario fijo debe ser positivo.", "Error", JOptionPane.ERROR_MESSAGE);
+//            return;
+//        }
+////      
+//        try (FileWriter outFile = new FileWriter("test/empleados.txt" , true)) {
+// 
+//            String Empleado= nombreEmpleado + ";" + telefono + ";" + cedula + ";" + cargo + ";" + fecha + ";" + salarioFijo + ";" + salarioComisiones;
+////
+//            writer.write(Empleado);
+//            writer.newLine();
+//            writer.flush();
+//            
+//            JOptionPane.showMessageDialog(this, "Empleado registrado con éxito.", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
+//        } catch (IOException ex) {
+//            JOptionPane.showMessageDialog(this, "Error al registrar la venta.", "Error", JOptionPane.ERROR_MESSAGE);
+//            ex.printStackTrace();
+//        }
+//    }
     
     //Funcion para saber si el codigo está repetido
 //    private boolean CodigoRepetido(String nombre) {
@@ -262,6 +297,12 @@ public class System_Vista extends javax.swing.JFrame {
         });
         jPanelEmpleadosRegistrar.add(jTextFieldEmpleadosNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 100, -1));
         jPanelEmpleadosRegistrar.add(jTextFieldEmpleadosCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 100, -1));
+
+        jTextFieldEmpleadosCargo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldEmpleadosCargoActionPerformed(evt);
+            }
+        });
         jPanelEmpleadosRegistrar.add(jTextFieldEmpleadosCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 100, -1));
 
         jLabelEmpleadosTelefono.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -293,6 +334,11 @@ public class System_Vista extends javax.swing.JFrame {
 
         btnEmpleadosRegistrar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnEmpleadosRegistrar.setText("Registrar");
+        btnEmpleadosRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEmpleadosRegistrarActionPerformed(evt);
+            }
+        });
         jPanelEmpleadosRegistrar.add(btnEmpleadosRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, -1, -1));
 
         btnEmpleadosEliminar.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -501,6 +547,22 @@ public class System_Vista extends javax.swing.JFrame {
     private void jTextFieldVentasMontoDeLaVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldVentasMontoDeLaVentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldVentasMontoDeLaVentaActionPerformed
+
+    private void btnEmpleadosRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEmpleadosRegistrarActionPerformed
+//                // TODO add your handling code here:
+//        registrarEmpleado();
+//        jTextFieldEmpleadosNombre.setText("");
+//        jTextFieldEmpleadosCedula.setText("");
+//        jTextFieldEmpleadosTelefono.setText("");
+//        jTextFieldEmpleadosSalarioComisiones.setText("");
+//        jTextFieldEmpleadosCargo.setText("");
+//        jTextFieldEmpleadosFechaIngreso.setText("");
+//        jTextFieldEmpleadosSalarioFijo.setText("");
+    }//GEN-LAST:event_btnEmpleadosRegistrarActionPerformed
+
+    private void jTextFieldEmpleadosCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldEmpleadosCargoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldEmpleadosCargoActionPerformed
 
     /**
      * @param args the command line arguments
