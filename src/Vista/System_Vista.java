@@ -6,7 +6,8 @@ package Vista;
 
 import Controlador.SettingsController;
 import static Controlador.comisiones.buscarCedula;
-import static Main.Main.getArray;
+import java.io.BufferedWriter;
+//import static Main.Main.getArray;
 //import static Main.Main.getText;
 //import static Main.Main.imprimirMatriz;
 //import static Main.Main.write;
@@ -25,68 +26,63 @@ import javax.swing.JOptionPane;
 public class System_Vista extends javax.swing.JFrame {
     
     
-    //función para verificar codigo del carro en registros
-    public static boolean codigoCarroExiste(String codigo, String[][] arrayVentas) {
-        for (int i = 0; i < arrayVentas.length; i++) {
-            if (arrayVentas[i][3].equals(codigo)) { // Suponiendo que el código es la cuarta columna
-                return true;
-            }
-        }
-        return false;
-    }
- 
-    //Funcion para crear Archivo de ventas y validaciones de usuario
-//    public void registrarVenta() {
-//        
-//        String nombreVendedor = jTextFieldVentasNombre.getText();
-//        String cedula = jTextFieldVentasCedula.getText();
-//        String marca = jTextFieldVentasTipoDeAuto.getText();
-//        String codigo = jTextFieldVentasCodigoDelAuto.getText();
-//        String montoVenta = jTextFieldVentasMontoDeLaVenta.getText();
-//
-//        if (nombreVendedor.isEmpty() || cedula.isEmpty() || marca.isEmpty() || codigo.isEmpty() || montoVenta.isEmpty()) {
-//            JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios.", "Error", JOptionPane.ERROR_MESSAGE);
-//            return;
+//    //función para verificar codigo del carro en registros
+//    public static boolean codigoCarroExiste(String codigo, String[][] arrayVentas) {
+//        for (int i = 0; i < arrayVentas.length; i++) {
+//            if (arrayVentas[i][3].equals(codigo)) { // Suponiendo que el código es la cuarta columna
+//                return true;
+//            }
 //        }
-//
-//        if (codigoCarroExiste(codigo, getArray("ventas.txt"))) {
-//            JOptionPane.showMessageDialog(this, "El código del carro ya existe en los registros.", "Error", JOptionPane.ERROR_MESSAGE);
-//            return;
-//        }
-//
-//        if (Double.parseDouble(montoVenta) < 0) {
-//            JOptionPane.showMessageDialog(this, "El monto de la venta debe ser positivo.", "Error", JOptionPane.ERROR_MESSAGE);
-//            return;
-//        }
-//
-//        try {
-//            FileWriter outFile = new FileWriter("ventas.txt", true);
-//            PrintWriter registrarVentas = new PrintWriter(outFile);
-//
-//            registrarVentas.println(nombreVendedor + ";" + cedula + ";" + marca + ";" + codigo + ";" + montoVenta);
-//
-//            registrarVentas.close();
-//            JOptionPane.showMessageDialog(this, "Venta registrada con éxito.", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
-//        } catch (IOException ex) {
-//            JOptionPane.showMessageDialog(this, "Error al registrar la venta.", "Error", JOptionPane.ERROR_MESSAGE);
-//            ex.printStackTrace();
-//        }
+//        return false;
 //    }
+    
+       //Funcion para crear Archivo de ventas y validaciones de usuario
+    public void registrarVentaV() {
+    
+//        
+        String nombreVendedor = jTextFieldVentasNombre.getText();
+        String cedula = jTextFieldVentasCedula.getText();
+        String marca = jTextFieldVentasTipoDeAuto.getText();
+        String codigo = jTextFieldVentasCodigoDelAuto.getText();
+        String montoVenta = jTextFieldVentasMontoDeLaVenta.getText();
+//      
+        if (nombreVendedor.isEmpty() || cedula.isEmpty() || marca.isEmpty() || codigo.isEmpty() || montoVenta.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (Double.parseDouble(montoVenta) < 0) {
+            JOptionPane.showMessageDialog(this, "El monto de la venta debe ser positivo.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+//
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("test/ventas.txt", true))) {
+ 
+            String registro = nombreVendedor + ";" + cedula + ";" + marca + ";" + codigo + ";" + montoVenta;
+//
+            writer.write(registro);
+            writer.flush();
+            JOptionPane.showMessageDialog(this, "Venta registrada con éxito.", "Registro exitoso", JOptionPane.INFORMATION_MESSAGE);
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(this, "Error al registrar la venta.", "Error", JOptionPane.ERROR_MESSAGE);
+            ex.printStackTrace();
+        }
+    }
             
     
     
     //Funcion para saber si el codigo está repetido
-    private boolean CodigoRepetido(String nombre) {
-    try (Scanner scanner = new Scanner("test/ventas.txt")) {
-        while (scanner.hasNextLine()) {
-            String linea = scanner.nextLine();
-            if (linea.contains(nombre + ";")) {
-                return true;
-            }
-        }
-    }
-    return false;
-    }
+//    private boolean CodigoRepetido(String nombre) {
+//    try (Scanner scanner = new Scanner("test/ventas.txt")) {
+//        while (scanner.hasNextLine()) {
+//            String linea = scanner.nextLine();
+//            if (linea.contains(nombre + ";")) {
+//                return true;
+//            }
+//        }
+//    }
+//    return false;
+//    }
     
     
     public System_Vista() {
@@ -492,13 +488,13 @@ public class System_Vista extends javax.swing.JFrame {
     private void btnVentasRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentasRegistrarActionPerformed
         // TODO add your handling code here:
         
-//        registrarVenta();
-//        // Limpiar los campos después de guardar los datos
-//        jTextFieldVentasCodigoDelAuto.setText("");
-//        jTextFieldVentasNombre.setText("");
-//        jTextFieldVentasCedula.setText("");
-//        jTextFieldVentasTipoDeAuto.setText("");
-//        jTextFieldVentasMontoDeLaVenta.setText("");
+        registrarVentaV();
+        // Limpiar los campos después de guardar los datos
+        jTextFieldVentasCodigoDelAuto.setText("");
+        jTextFieldVentasNombre.setText("");
+        jTextFieldVentasCedula.setText("");
+        jTextFieldVentasTipoDeAuto.setText("");
+        jTextFieldVentasMontoDeLaVenta.setText("");
         
     }//GEN-LAST:event_btnVentasRegistrarActionPerformed
 
